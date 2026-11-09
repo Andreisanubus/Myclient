@@ -17,9 +17,6 @@ dependencies {
 }
 
 processResources {
-    if (file('knife_assets.zip').exists()) {
-        from(zipTree('knife_assets.zip'))
-    }
     inputs.property "version", project.version
     filesMatching("fabric.mod.json") {
         expand "version": inputs.properties.version
